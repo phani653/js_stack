@@ -83,14 +83,14 @@ We can either write JS code directly in html page or we can write a separate .js
 * Named functions
 * Anonymous functions
 * Immediately invoked function expressions
-```
+
 def functionName(parameter1, param2){
   do something;
   return something;
 }
-```
+
 * Anonymous functions don't have a name so the parentheses appear right after the function. Immediately invoked function expressions.
-```
+
 (function (){
   var result = 12/0.75;
   console.log("something")
@@ -107,7 +107,7 @@ def functionName(parameter1, param2){
 * const: is a constant variable. This can't be changed once defined
 * let: Block scope variable. Smaller scope than var
 
-```
+
 function logScope(){
   var localVar = 2;
   if (localVar){
@@ -116,7 +116,7 @@ function logScope(){
   }
   console.log("Outside localVar is ", local)
 }
-```
+
 * Above program prints 99 both times. To avoid this we use let. instead of var keyword use `let` keyword to print 99 inside and 2 Outside.
 
 * JS is a object oriented language. But little sloppy
@@ -133,4 +133,4 @@ refer objects.js for closure example code
 
 ### DOM: The document object model
 
-* The browser is an Object and the document that displays is an object too. 
+* The browser is an Object and the document that displays is an object too.

@@ -132,3 +132,5 @@ refer objects.js for closure example code
 * MDN article on closures explains how this works clearly.
 
 ### DOM: The document object model
+
+* The browser is an Object and the document that displays is an object too. 

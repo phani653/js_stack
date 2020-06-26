@@ -78,3 +78,57 @@ We can either write JS code directly in html page or we can write a separate .js
 * <b>In JS objects have properties and Methods</b>
 * properties are pieces of meta information about the object
 * Methods are functions that belongs to the object
+
+#### Functions
+* Named functions
+* Anonymous functions
+* Immediately invoked function expressions
+```
+def functionName(parameter1, param2){
+  do something;
+  return something;
+}
+```
+* Anonymous functions don't have a name so the parentheses appear right after the function. Immediately invoked function expressions.
+```
+(function (){
+  var result = 12/0.75;
+  console.log("something")
+}())
+
+* Named functions same as functions in c but starts with keyword function instead of data type
+* The browser runs the anonymous functions immediately when it's encountered if that function wraps up with parenthesis.
+* So if we ant to pass some arguments to the anonymous function, we should define them before definition of the function.
+
+##### Scope of bariables
+
+* When we declare a variable inside a function but without using a var keyword, it's scope becomes global instead of local. This leads to lot of confusions. So it is always recommended to use var keyword before for declaring a variable.
+
+* const: is a constant variable. This can't be changed once defined
+* let: Block scope variable. Smaller scope than var
+
+```
+function logScope(){
+  var localVar = 2;
+  if (localVar){
+    var localVar = "99"
+    console.log("nested localVar is ", localVar);
+  }
+  console.log("Outside localVar is ", local)
+}
+```
+* Above program prints 99 both times. To avoid this we use let. instead of var keyword use `let` keyword to print 99 inside and 2 Outside.
+
+* JS is a object oriented language. But little sloppy
+
+* To access items inside the object we use dot notation `objectName.itemName` we can achieve this using bracket notation also `objectName["itemName"]`
+
+* The reason for two types of notations is, mantimes we may get objects from somewhere else like output of PHP or something. These items may be like this `WP:Image`. If we try to access this using dot notation that becomes `objectName.WP:image`, which is unreadable and gives error also. In these type cases, bracket notation is very useful.
+
+#### Closures
+refer objects.js for closure example code
+> Closure is a function inside a function that relies on variables in the outside function to work
+
+* MDN article on closures explains how this works clearly.
+
+### DOM: The document object model

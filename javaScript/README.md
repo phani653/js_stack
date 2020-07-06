@@ -84,17 +84,21 @@ We can either write JS code directly in html page or we can write a separate .js
 * Anonymous functions
 * Immediately invoked function expressions
 
+```
 def functionName(parameter1, param2){
   do something;
   return something;
 }
+```
 
 * Anonymous functions don't have a name so the parentheses appear right after the function. Immediately invoked function expressions.
 
+```
 (function (){
   var result = 12/0.75;
   console.log("something")
 }())
+```
 
 * Named functions same as functions in c but starts with keyword function instead of data type
 * The browser runs the anonymous functions immediately when it's encountered if that function wraps up with parenthesis.
@@ -107,7 +111,7 @@ def functionName(parameter1, param2){
 * const: is a constant variable. This can't be changed once defined
 * let: Block scope variable. Smaller scope than var
 
-
+```
 function logScope(){
   var localVar = 2;
   if (localVar){
@@ -116,6 +120,7 @@ function logScope(){
   }
   console.log("Outside localVar is ", local)
 }
+```
 
 * Above program prints 99 both times. To avoid this we use let. instead of var keyword use `let` keyword to print 99 inside and 2 Outside.
 
@@ -134,3 +139,28 @@ refer objects.js for closure example code
 ### DOM: The document object model
 
 * The browser is an Object and the document that displays is an object too.
+* The browser itself has long list of objects including browser windows, the document inside the window, the navigation buttons, the location or URL and more. These objects are modeled by `BOM (Browser Object Model)`.
+* Since all these are objects, we can interact with all of these in the same way we interact with other objects.
+* Window is the top level object in the BOM (window.open() opens a new tab in the browser), and it has ton of properties and methods you can use to interact with browser.
+* We can see all properties and methods for window in `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference`
+* Most of the methods of window object are made for browser only. But we mostly interact with document (either window.docuement or directly we can call document since js already lives inside the document). For this DOM is useful.
+* Browser create a node tree for document. How all things are structured inside the document.
+* We can see the code version of this DOM (node tree) in the Elements section of developers tools. We can select any node in the browser and can see what styles and properties applied to that node.
+*  DOM properties examples are `document.body, document.url, document.title`.
+* To reach an element/node inside body, we use DOM Methods.
+* Examples of DOM Methods are
+```
+document.getElementById("element id");
+document.getElementsByClassName("class name");
+document.getElementsByTagName("THML tag");
+```
+
+* Get the first element matching specified selectors(s):
+`document.querySelector(".main-nav a")`
+
+* Get all elements matching specified selector(s):
+`document.querySelectorAll(".post-content p")`
+
+* For example `document.querySelectorAll(".social-nav a[herf*='linkedin.com']")` will gives all the elements which pointing to linkedin.com in the document.
+
+* The purpose of getting an element using findById or etc... methods is to do something with that element like changing the text, change an image reference, change className or ID or HTML.
